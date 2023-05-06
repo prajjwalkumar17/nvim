@@ -2,7 +2,6 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
-
 ---------------------
 -- General Keymaps
 ---------------------
@@ -36,6 +35,11 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+
+--Toggleterm
+keymap.set("n","<leader>t",":ToggleTerm<CR>")
+keymap.set("n","<leader>x",":ToggleTerm direction=float<CR>")
+
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer

@@ -114,9 +114,9 @@ return packer.startup(function(use)
 use {
   use 'glepnir/dashboard-nvim',
   event = 'VimEnter',
-  -- config =require("pk.plugin.dashboard-config"),
   requires = {'nvim-tree/nvim-web-devicons'}
 }
+use {'akinsho/toggleterm.nvim', tag = '*'}
 
   if packer_bootstrap then
     require("packer").sync()
