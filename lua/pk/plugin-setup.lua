@@ -110,6 +110,14 @@ return packer.startup(function(use)
  -- fidget
   use ("j-hui/fidget.nvim")
 
+  --dashboard
+use {
+  use 'glepnir/dashboard-nvim',
+  event = 'VimEnter',
+  -- config =require("pk.plugin.dashboard-config"),
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
+
   if packer_bootstrap then
     require("packer").sync()
   end
