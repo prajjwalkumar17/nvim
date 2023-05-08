@@ -120,6 +120,12 @@ use {
 use ('rmagatti/goto-preview')
 use {'akinsho/toggleterm.nvim', tag = '*'}
 
+  --minimap
+use 'rinx/nvim-minimap'
+
+  --gitDiff
+use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
   if packer_bootstrap then
     require("packer").sync()
   end

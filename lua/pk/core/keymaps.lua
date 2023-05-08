@@ -72,6 +72,9 @@ keymap.set(
 	{ desc = "preview references" }
 )
 
+--DiffView
+keymap.set("n", "<leader>gt", ":DiffviewOpen<CR>")
+keymap.set("n", "<leader>gq", ":DiffviewClose<CR>") -- toggle file explorer
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer

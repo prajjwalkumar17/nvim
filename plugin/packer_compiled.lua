@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -178,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-minimap"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-minimap",
+    url = "https://github.com/rinx/nvim-minimap"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
