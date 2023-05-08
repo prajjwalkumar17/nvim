@@ -38,7 +38,39 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 
 --Toggleterm
 keymap.set("n","<leader>t",":ToggleTerm<CR>")
-keymap.set("n","<leader>x",":ToggleTerm direction=float<CR>")
+keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
+
+--gotoPreview
+keymap.set(
+	"n",
+	"gpd",
+	[[<cmd>lua require('goto-preview').goto_preview_definition()<cr>]],
+	{ desc = "preview definition" }
+)
+keymap.set(
+	"n",
+	"gpt",
+	[[<cmd>lua require('goto-preview').goto_preview_type_definition()<cr>]],
+	{ desc = "preview type definition" }
+)
+keymap.set(
+	"n",
+	"gpi",
+	[[<cmd>lua require('goto-preview').goto_preview_implementation()<cr>]],
+	{ desc = "preview implementation" }
+)
+keymap.set(
+	"n",
+	"gP",
+	[[<cmd>lua require('goto-preview').close_all_win()<cr>]],
+	{ desc = "close all previews" }
+)
+keymap.set(
+	"n",
+	"gpr",
+	[[<cmd>lua require('goto-preview').goto_preview_references()<cr>]],
+	{ desc = "preview references" }
+)
 
 
 -- nvim-tree

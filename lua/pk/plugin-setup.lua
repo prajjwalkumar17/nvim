@@ -116,6 +116,8 @@ use {
   event = 'VimEnter',
   requires = {'nvim-tree/nvim-web-devicons'}
 }
+  --gotoPreview
+use ('rmagatti/goto-preview')
 use {'akinsho/toggleterm.nvim', tag = '*'}
 
   if packer_bootstrap then
