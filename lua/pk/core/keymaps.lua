@@ -76,6 +76,35 @@ keymap.set(
 keymap.set("n", "<leader>gt", ":DiffviewOpen<CR>")
 keymap.set("n", "<leader>gq", ":DiffviewClose<CR>") -- toggle file explorer
 
+--Barbar Tabs
+-- Move to previous/next
+keymap.set('n', '<leader>,', '<Cmd>BufferPrevious<CR>')
+keymap.set('n', '<leader>.', '<Cmd>BufferNext<CR>')
+-- Re-order to previous/next
+keymap.set('n', '<leader>;', '<Cmd>BufferMovePrevious<CR>')
+keymap.set('n', '<leader>', '<Cmd>BufferMoveNext<CR>')
+-- Goto buffer in position...
+keymap.set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>')
+keymap.set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>')
+keymap.set('n', '<leader>3', '<Cmd>BufferGoto 3<CR>')
+keymap.set('n', '<leader>4', '<Cmd>BufferGoto 4<CR>')
+keymap.set('n', '<leader>5', '<Cmd>BufferGoto 5<CR>')
+keymap.set('n', '<leader>6', '<Cmd>BufferGoto 6<CR>')
+keymap.set('n', '<leader>7', '<Cmd>BufferGoto 7<CR>')
+keymap.set('n', '<leader>8', '<Cmd>BufferGoto 8<CR>')
+keymap.set('n', '<leader>9', '<Cmd>BufferGoto 9<CR>')
+keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
+-- Pin/unpin buffer
+keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>')
+-- Close buffer
+keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+keymap.set('n','<leader>bc','<Cmd>BufferCloseAllButPinned<CR>') --close all but pinned
+
+
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 

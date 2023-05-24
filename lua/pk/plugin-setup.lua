@@ -126,6 +126,11 @@ use 'rinx/nvim-minimap'
   --gitDiff
 use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+  --barbar for tabs
+use {'romgrk/barbar.nvim', requires = {
+  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+}}
   if packer_bootstrap then
     require("packer").sync()
   end
