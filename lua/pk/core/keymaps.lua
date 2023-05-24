@@ -61,7 +61,7 @@ keymap.set(
 )
 keymap.set(
 	"n",
-	"gP",
+	"gQ",
 	[[<cmd>lua require('goto-preview').close_all_win()<cr>]],
 	{ desc = "close all previews" }
 )
