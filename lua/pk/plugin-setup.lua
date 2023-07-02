@@ -131,6 +131,9 @@ use {'romgrk/barbar.nvim', requires = {
   'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
   'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 }}
+  --Rust-Analyzer
+use 'simrat39/rust-tools.nvim'
+  
   if packer_bootstrap then
     require("packer").sync()
   end
