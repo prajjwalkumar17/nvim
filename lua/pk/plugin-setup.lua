@@ -35,6 +35,8 @@ return packer.startup(function(use)
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
+  use("rebelot/kanagawa.nvim") -- dark--redish theme
+
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   use("szw/vim-maximizer") -- maximizes and restores current window
@@ -133,7 +135,6 @@ use {'romgrk/barbar.nvim', requires = {
 }}
   --Rust-Analyzer
 use 'simrat39/rust-tools.nvim'
-  
   if packer_bootstrap then
     require("packer").sync()
   end
