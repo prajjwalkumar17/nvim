@@ -133,8 +133,21 @@ use {'romgrk/barbar.nvim', requires = {
   'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
   'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 }}
-  --Rust-Analyzer
-use 'simrat39/rust-tools.nvim'
+-- Rainbow parentheses
+use {'p00f/nvim-ts-rainbow'}
+-- Autosave files
+use {
+      'Pocco81/AutoSave.nvim',
+          -- require "plugins/autosave"
+}
+
+  -- Autoformat files
+use {
+      'lukas-reineke/lsp-format.nvim',
+          -- require "plugins/format"
+}
+
+  use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then
     require("packer").sync()
   end

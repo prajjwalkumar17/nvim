@@ -33,6 +33,12 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- Plugin Keybinds
 ----------------------
 
+-- window resizing
+keymap.set("n","<C-up>", "<cmd>resize +1<cr>")
+keymap.set("n","<C-down>", "<cmd>resize -1<cr>")
+keymap.set("n","<C-left>", "<cmd>vertical resize -1<cr>")
+keymap.set("n","<C-right>", "<cmd>vertical resize +1<cr>")
+
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
@@ -71,6 +77,25 @@ keymap.set(
 	[[<cmd>lua require('goto-preview').goto_preview_references()<cr>]],
 	{ desc = "preview references" }
 )
+
+
+keymap.set("n", "<leader>lk", "<cmd>lua vim.lsp.buf.hover()<cr>")
+
+-- Keep Visual Mode selections when indenting
+keymap.set("v", ">", ">gv")
+keymap.set("v", "<", "<gv")
+
+-- Clipboard support
+-- keymap.set("v", "<leader>y", "\"+y")
+-- keymap.set("v", "<leader>y", "\"+yg_")
+-- keymap.set("v", "<leader>y", "\"+yg_")
+-- keymap.set("v", "<leader>y", "\"+yg_")
+
+-- nnoremap("<leader>p", "\"+p")
+-- nnoremap("<leader>P", "\"+P")
+
+-- Toggle between buffers
+keymap.set("n", "<leader><leader>", "<C-^>")
 
 --DiffView
 keymap.set("n", "<leader>gt", ":DiffviewOpen<CR>")

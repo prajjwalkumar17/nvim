@@ -1,4 +1,5 @@
 local opt = vim.opt -- for conciseness
+vim.cmd [[ autocmd BufNewFile,BufRead *.Jenkinsfile set filetype=groovy ]]
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)

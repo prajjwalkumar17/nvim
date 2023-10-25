@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["AutoSave.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
+    url = "https://github.com/Pocco81/AutoSave.nvim"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -138,6 +143,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/goto-preview",
     url = "https://github.com/rmagatti/goto-preview"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -210,6 +225,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
