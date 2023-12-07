@@ -141,6 +141,15 @@ use {
           -- require "plugins/autosave"
 }
 
+  -- which-key
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+  end
+}
+
   -- Autoformat files
 use {
       'lukas-reineke/lsp-format.nvim',
