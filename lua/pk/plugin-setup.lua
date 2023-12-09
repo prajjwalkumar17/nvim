@@ -9,6 +9,7 @@ local ensure_packer = function()
   end
   return false
 end
+
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
@@ -57,9 +58,6 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
-  -- fuzzy finding w/ telescope
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -85,7 +83,8 @@ return packer.startup(function(use)
       { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" },
     },
-  }) -- enhanced lsp uis
+  })
+  -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -109,55 +108,61 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
- -- fidget
+  -- fidget
   use ("j-hui/fidget.nvim")
 
   --dashboard
-use {
-  use 'glepnir/dashboard-nvim',
-  event = 'VimEnter',
-  requires = {'nvim-tree/nvim-web-devicons'}
-}
+  use {
+    use 'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
   --gotoPreview
-use ('rmagatti/goto-preview')
-use {'akinsho/toggleterm.nvim', tag = '*'}
+  use ('rmagatti/goto-preview')
+  use {'akinsho/toggleterm.nvim', tag = '*'}
 
   --minimap
-use 'rinx/nvim-minimap'
+  use 'rinx/nvim-minimap'
 
   --gitDiff
-use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   --barbar for tabs
-use {'romgrk/barbar.nvim', requires = {
-  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-}}
--- Rainbow parentheses
-use {'p00f/nvim-ts-rainbow'}
--- Autosave files
-use {
-      'Pocco81/AutoSave.nvim',
-          -- require "plugins/autosave"
-}
+  use {'romgrk/barbar.nvim', requires = {
+    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  }}
+ 
+  -- Rainbow parentheses
+  use {'p00f/nvim-ts-rainbow'}
+  -- Autosave files
+  use {
+        'Pocco81/AutoSave.nvim',
+  }
 
   -- which-key
-use {
-  "folke/which-key.nvim",
-  config = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end
-}
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end
+  }
 
   -- Autoformat files
-use {
-      'lukas-reineke/lsp-format.nvim',
-          -- require "plugins/format"
-}
+  use {
+        'lukas-reineke/lsp-format.nvim',
+            -- require "plugins/format"
+  }
 
+  -- fuzzy finding w/ telescope
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+  -- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then
     require("packer").sync()
   end
 end)
+

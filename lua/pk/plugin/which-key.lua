@@ -1,9 +1,10 @@
-local setup, which-key = pcall(require, "which-key")
+local setup, which_key = pcall(require, "which-key")
 if not setup then
   return
 end
 
-which-key.setup(
+which_key.setup(
+{
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
