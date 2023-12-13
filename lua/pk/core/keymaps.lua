@@ -43,7 +43,8 @@ keymap.set("n","<C-right>", "<cmd>vertical resize +1<cr>")
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 --Toggleterm
-keymap.set("n","<leader>t",":ToggleTerm<CR>")
+keymap.set("n","<leader>t",":ToggleTerm<CR> direction=horizontal<CR>")
+keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 
 --gotoPreview

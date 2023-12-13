@@ -27,7 +27,7 @@ treesitter.setup({
   -- enable autotagging (w/ nvim-ts-autotag plugin)
   autotag = { enable = true },
  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "lua", "vim", "vimdoc", "query", "rust", "java"},
+  ensure_installed = { "lua", "vim", "vimdoc", "query", "rust", "java", "javascript"},
   -- auto install above language parsers
   auto_install = true,
 })
