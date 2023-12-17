@@ -80,7 +80,7 @@ keymap.set(
 )
 
 
-keymap.set("n", "<leader>lk", "<cmd>lua vim.lsp.buf.hover()<cr>")
+keymap.set("n", "<leader>l", "<cmd>lua vim.lsp.buf.hover()<cr>")
 
 -- Keep Visual Mode selections when indenting
 keymap.set("v", ">", ">gv")
