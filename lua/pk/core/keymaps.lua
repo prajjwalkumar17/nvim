@@ -46,6 +46,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 keymap.set("n","<leader>t",":ToggleTerm<CR> direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
+keymap.set("n", "<leader>cp", ":w<CR>:let filename = expand('%:p')<CR>:!javac <C-R>=filename<CR> && java <C-R>=filename<CR><CR>")
 
 --gotoPreview
 keymap.set(
