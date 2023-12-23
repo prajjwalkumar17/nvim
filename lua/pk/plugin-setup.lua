@@ -159,6 +159,10 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
+  -- Java tools
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-jdtls'
+
   -- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then

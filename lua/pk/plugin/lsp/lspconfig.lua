@@ -1,5 +1,7 @@
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+local home = os.getenv('HOME')
+local jdtls = pcall(require, "jdtls")
 if not lspconfig_status then
   return
 end
@@ -33,6 +35,8 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover around
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
+  keymap.set("n", "<leader>la", "<Cmd>lua require(\'jdtls\').organize_imports()<CR>", opts) -- see outline on right hand side
+
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -45,11 +49,6 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-
--- lspconfig["rust_analyzer"].setup({
---      capabilities = capabilities,
---         on_attach = on_attach,
--- })
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
@@ -71,3 +70,29 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+-- Adding JDTLS (java language server)
+local capabilities_1 = vim.lsp.protocol.make_client_capabilities()
+capabilities_1 = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+lspconfig["jdtls"].setup({
+  cmd = {
+        'java',
+        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+        '-Dosgi.bundles.defaultStartLevel=4',
+        '-Declipse.product=org.eclipse.jdt.ls.core.product',
+        '-Dlog.level=ALL',
+        '-Xmx1G',
+        '-jar',
+        'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\jdt-language-server-1.9.0-202203031534\\plugins\\org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        '-configuration',
+        'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\jdt-language-server-1.9.0-202203031534\\config_win\\',
+        '-data',
+        vim.fn.expand('~/.cache/jdtls-workspace') .. workspace_dir,
+    },
+   root_dir = function(fname)
+      return lspconfig.util.root_pattern('gradlew', '.git', 'mvnw')(fname) or vim.fn.getcwd()
+    end,
+    capabilities = capabilities_1
+  })
+
