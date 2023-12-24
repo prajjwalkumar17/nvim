@@ -1,8 +1,12 @@
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-local home = os.getenv('HOME')
-local jdtls = pcall(require, "jdtls")
 if not lspconfig_status then
+  return
+end
+
+local jdtls_ok, jdtls = pcall(require, "jdtls")
+if not jdtls_ok then
+  vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
   return
 end
 
@@ -70,29 +74,4 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
-
--- Adding JDTLS (java language server)
-local capabilities_1 = vim.lsp.protocol.make_client_capabilities()
-capabilities_1 = require('cmp_nvim_lsp').default_capabilities(capabilities)
-local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-lspconfig["jdtls"].setup({
-  cmd = {
-        'java',
-        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-        '-Dosgi.bundles.defaultStartLevel=4',
-        '-Declipse.product=org.eclipse.jdt.ls.core.product',
-        '-Dlog.level=ALL',
-        '-Xmx1G',
-        '-jar',
-        'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\jdt-language-server-1.9.0-202203031534\\plugins\\org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-        '-configuration',
-        'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\jdt-language-server-1.9.0-202203031534\\config_win\\',
-        '-data',
-        vim.fn.expand('~/.cache/jdtls-workspace') .. workspace_dir,
-    },
-   root_dir = function(fname)
-      return lspconfig.util.root_pattern('gradlew', '.git', 'mvnw')(fname) or vim.fn.getcwd()
-    end,
-    capabilities = capabilities_1
-  })
 

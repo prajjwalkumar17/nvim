@@ -42,11 +42,15 @@ keymap.set("n","<C-right>", "<cmd>vertical resize +1<cr>")
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
---Toggleterm
+-- Toggleterm
 keymap.set("n","<leader>t",":ToggleTerm<CR> direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
-keymap.set("n", "<leader>cp", ":w<CR>:let filename = expand('%:p')<CR>:!javac <C-R>=filename<CR> && java <C-R>=filename<CR><CR>")
+
+-- RunJavaCode
+keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
+-- FormatJavaCode
+keymap.set("n", "<leader>fm", ":!powershell -Command \"java -jar 'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\lsp\\google-java-format-1.19.1-all-deps.jar' -i '%:p'<CR>")
 
 --gotoPreview
 keymap.set(
