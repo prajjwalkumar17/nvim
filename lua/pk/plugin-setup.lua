@@ -150,10 +150,7 @@ return packer.startup(function(use)
   }
 
   -- Autoformat files
-  use {
-        'lukas-reineke/lsp-format.nvim',
-            -- require "plugins/format"
-  }
+  use 'lukas-reineke/lsp-format.nvim'    -- require "plugins/format"
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -162,6 +159,9 @@ return packer.startup(function(use)
   -- Java tools
   use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-jdtls'
+
+  -- vim notify
+  use 'rcarriga/nvim-notify'
 
   -- Rust tools
   use 'simrat39/rust-tools.nvim'

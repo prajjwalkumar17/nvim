@@ -219,6 +219,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-minimap",
     url = "https://github.com/rinx/nvim-minimap"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
@@ -255,11 +260,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["prettier.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
