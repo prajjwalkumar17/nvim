@@ -169,6 +169,14 @@ return packer.startup(function(use)
   -- ident brackets
   use 'nathanaelkane/vim-indent-guides'
 
+  -- cmdline
+  use 'MunifTanjim/nui.nvim'
+  use {
+  'VonHeikemen/fine-cmdline.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+}
   -- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then

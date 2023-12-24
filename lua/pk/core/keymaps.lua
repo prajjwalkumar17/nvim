@@ -45,6 +45,9 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 -- Tagbar
 keymap.set("n","<F8>", ":TagbarToggle<CR>")
 
+-- Cmdline
+keymap.set("n","<leader>b", ":FineCmdline<CR>")
+
 -- Indent lines
 keymap.set("n", "<leader>if", ":IndentGuidesToggle<CR>")
 
@@ -98,7 +101,7 @@ keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
 -- Clipboard support
--- keymap.set("v", "<leader>y", "\"+y")
+--keymap.set("v", "<leader>y", "\"+y")
 -- keymap.set("v", "<leader>y", "\"+yg_")
 -- keymap.set("v", "<leader>y", "\"+yg_")
 -- keymap.set("v", "<leader>y", "\"+yg_")
