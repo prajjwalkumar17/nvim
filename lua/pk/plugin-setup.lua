@@ -176,7 +176,14 @@ return packer.startup(function(use)
   requires = {
     {'MunifTanjim/nui.nvim'}
   }
-}
+ }
+  -- nvim surround
+  use{
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  }
+
+
   -- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then

@@ -52,7 +52,7 @@ keymap.set("n","<leader>b", ":FineCmdline<CR>")
 keymap.set("n", "<leader>if", ":IndentGuidesToggle<CR>")
 
 -- Toggleterm
-keymap.set("n","<leader>t",":ToggleTerm<CR> direction=horizontal<CR>")
+keymap.set("n","<leader>t",":ToggleTerm direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 
