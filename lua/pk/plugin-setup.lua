@@ -183,6 +183,13 @@ return packer.startup(function(use)
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
   }
 
+  -- leap for labelling and traversing to the words
+  use "tpope/vim-repeat"
+
+  use {
+    "ggandor/leap.nvim",
+    requires = { "tpope/vim-repeat" } -- Adding a required dependency for leap.nvim
+  }
 
   -- Rust tools
   use 'simrat39/rust-tools.nvim'

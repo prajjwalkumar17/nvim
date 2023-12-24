@@ -56,8 +56,31 @@ keymap.set("n","<leader>t",":ToggleTerm direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 
+  -- Leap commands
+  local leap = require('leap')
+
+  -- Forward to next target using 'z'
+  keymap.set({'n', 'x', 'o'}, 'z', '<Plug>(leap-forward-to)')
+
+  -- Backward to previous target using 'Z'
+  keymap.set({'n', 'x', 'o'}, 'Z', '<Plug>(leap-backward-to)')
+
+  -- Forward till next target using 'zt'
+  keymap.set('x', 't', '<Plug>(leap-forward-till)')
+
+  -- Backward till previous target using 'zT'
+  keymap.set('x', 'T', '<Plug>(leap-backward-till)')
+
+  -- Repeat mappings similar to ; and , for z and zt motions
+  leap.add_repeat_mappings(';', ',', {
+    relative_directions = true,
+    modes = {'n', 'x', 'o'},
+  })
+
+
 -- RunJavaCode
 keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
+
 -- FormatJavaCode
 keymap.set("n", "<leader>fm", ":!powershell -Command \"java -jar 'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\lsp\\google-java-format-1.19.1-all-deps.jar' -i '%:p'<CR>")
 

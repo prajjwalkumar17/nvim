@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["fine-cmdline.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fine-cmdline.nvim",
+    url = "https://github.com/VonHeikemen/fine-cmdline.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
   },
   ["lsp-format.nvim"] = {
     loaded = true,
@@ -183,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -223,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -266,6 +286,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  tagbar = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-fzf-native.nvim",
@@ -291,6 +316,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-ReplaceWithRegister",
     url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
   },
+  ["vim-indent-guides"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-indent-guides",
+    url = "https://github.com/nathanaelkane/vim-indent-guides"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-maximizer",
@@ -300,6 +330,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
