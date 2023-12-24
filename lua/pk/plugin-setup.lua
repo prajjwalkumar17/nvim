@@ -163,6 +163,12 @@ return packer.startup(function(use)
   -- vim notify
   use 'rcarriga/nvim-notify'
 
+  -- tagbar
+  use 'preservim/tagbar'
+
+  -- ident brackets
+  use 'nathanaelkane/vim-indent-guides'
+
   -- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then

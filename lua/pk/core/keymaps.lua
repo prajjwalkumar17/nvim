@@ -42,6 +42,12 @@ keymap.set("n","<C-right>", "<cmd>vertical resize +1<cr>")
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
+-- Tagbar
+keymap.set("n","<F8>", ":TagbarToggle<CR>")
+
+-- Indent lines
+keymap.set("n", "<leader>if", ":IndentGuidesToggle<CR>")
+
 -- Toggleterm
 keymap.set("n","<leader>t",":ToggleTerm<CR> direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
