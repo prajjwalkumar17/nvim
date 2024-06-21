@@ -147,6 +147,9 @@ use {
           -- require "plugins/format"
 }
 
+  -- indent black lines
+  use {"lukas-reineke/indent-blankline.nvim"}
+
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then
     require("packer").sync()
