@@ -4,12 +4,6 @@ if not lspconfig_status then
   return
 end
 
-local jdtls_ok, jdtls = pcall(require, "jdtls")
-if not jdtls_ok then
-  vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
-  return
-end
-
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
@@ -48,7 +42,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
-local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })

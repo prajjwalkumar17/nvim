@@ -56,6 +56,11 @@ keymap.set("n","<leader>t",":ToggleTerm direction=horizontal<CR>")
 keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 
+-- Nvim dap
+keymap.set("n","<leader>db",":DapToggleBreakpoint<CR>") --Add breakpoint
+keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
+
+
   -- Leap commands
   local leap = require('leap')
 
@@ -80,6 +85,7 @@ keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 
 -- RunJavaCode
 keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
+keymap.set("n", "<leader>mn", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
 
 -- FormatJavaCode
 keymap.set("n", "<leader>fm", ":!powershell -Command \"java -jar 'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\lsp\\google-java-format-1.19.1-all-deps.jar' -i '%:p'<CR>")

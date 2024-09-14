@@ -132,7 +132,7 @@ return packer.startup(function(use)
     'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
   }}
- 
+
   -- Rainbow parentheses
   use {'p00f/nvim-ts-rainbow'}
   -- Autosave files
@@ -157,7 +157,6 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
   -- Java tools
-  use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-jdtls'
 
   -- vim notify
@@ -183,13 +182,16 @@ return packer.startup(function(use)
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
   }
 
-  -- leap for labelling and traversing to the words
   use "tpope/vim-repeat"
 
-  use {
-    "ggandor/leap.nvim",
-    requires = { "tpope/vim-repeat" } -- Adding a required dependency for leap.nvim
-  }
+  -- Colorizer for showing color out of the colorcodes
+  use "norcalli/nvim-colorizer.lua"
+
+  -- nvim lint as linter
+  use "mfussenegger/nvim-lint"
+
+  -- nvim formatter
+  use 'mhartington/formatter.nvim'
 
   -- Rust tools
   use 'simrat39/rust-tools.nvim'

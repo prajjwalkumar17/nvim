@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fine-cmdline.nvim",
     url = "https://github.com/VonHeikemen/fine-cmdline.nvim"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -214,15 +219,30 @@ _G.packer_plugins = {
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-jdtls"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-jdtls",
     url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
+  ["nvim-lint"] = {
+    loaded = true,
+    path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lint",
+    url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
