@@ -42,7 +42,7 @@ return packer.startup(function(use)
   use("szw/vim-maximizer") -- maximizes and restores current window
 
   -- essential plugins
-  use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+  -- use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
   -- commenting with gc
@@ -86,7 +86,6 @@ return packer.startup(function(use)
       { "nvim-treesitter/nvim-treesitter" },
     },
   }) -- enhanced lsp uis
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   -- formatting & linting
@@ -103,15 +102,14 @@ return packer.startup(function(use)
   })
 
   -- auto closing
-  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+  -- use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+  -- use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
  -- fidget
-  use ("j-hui/fidget.nvim")
-
+  use {"j-hui/fidget.nvim"}
   --dashboard
 use {
   use 'glepnir/dashboard-nvim',
@@ -122,8 +120,8 @@ use {
 use ('rmagatti/goto-preview')
 use {'akinsho/toggleterm.nvim', tag = '*'}
 
-  --minimap
-use 'rinx/nvim-minimap'
+--   --minimap
+-- use 'rinx/nvim-minimap'
 
   --gitDiff
 use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -135,20 +133,30 @@ use {'romgrk/barbar.nvim', requires = {
 }}
 -- Rainbow parentheses
 use {'p00f/nvim-ts-rainbow'}
--- Autosave files
-use {
-      'Pocco81/AutoSave.nvim',
-          -- require "plugins/autosave"
-}
+-- -- Autosave files
+-- use {
+--       'Pocco81/AutoSave.nvim',
+--           -- require "plugins/autosave"
+-- }
 
-  -- Autoformat files
-use {
-      'lukas-reineke/lsp-format.nvim',
-          -- require "plugins/format"
-}
-
-  -- indent black lines
+--   -- Autoformat files
+-- use {
+--       'lukas-reineke/lsp-format.nvim',
+--           -- require "plugins/format"
+-- }
   use {"lukas-reineke/indent-blankline.nvim"}
+
+-- old world theme
+  use {"dgox16/oldworld.nvim"}
+
+-- which-key
+   use {'folke/which-key.nvim', tag = 'v1.5.1'}
+
+-- flask
+    use {'folke/flash.nvim', tag = 'v1.18.2'}
+
+-- harpoon
+    use {'ThePrimeagen/harpoon'}
 
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?/init.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1699524327/lib/lua/5.1/?.so"
+local package_path_str = "/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/prajjwal.kumar/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["AutoSave.nvim"] = {
-    loaded = true,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
-    url = "https://github.com/Pocco81/AutoSave.nvim"
-  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -129,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["flash.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -144,15 +144,15 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/goto-preview",
     url = "https://github.com/rmagatti/goto-preview"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
-  },
-  ["lsp-format.nvim"] = {
-    loaded = true,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
-    url = "https://github.com/lukas-reineke/lsp-format.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -203,11 +198,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-minimap"] = {
-    loaded = true,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-minimap",
-    url = "https://github.com/rinx/nvim-minimap"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -219,13 +209,6 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-autotag"] = {
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
-    url = "https://github.com/windwp/nvim-ts-autotag"
-  },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
@@ -235,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["oldworld.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/oldworld.nvim",
+    url = "https://github.com/dgox16/oldworld.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -266,11 +254,6 @@ _G.packer_plugins = {
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["typescript.nvim"] = {
-    loaded = true,
-    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/typescript.nvim",
-    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
-  },
   ["vim-ReplaceWithRegister"] = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
@@ -295,15 +278,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-ts-autotag ]]
-time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
