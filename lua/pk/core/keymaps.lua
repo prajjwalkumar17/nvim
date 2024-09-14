@@ -60,29 +60,6 @@ keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
 keymap.set("n","<leader>db",":DapToggleBreakpoint<CR>") --Add breakpoint
 keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
 
-
-  -- Leap commands
-  local leap = require('leap')
-
-  -- Forward to next target using 'z'
-  keymap.set({'n', 'x', 'o'}, 'z', '<Plug>(leap-forward-to)')
-
-  -- Backward to previous target using 'Z'
-  keymap.set({'n', 'x', 'o'}, 'Z', '<Plug>(leap-backward-to)')
-
-  -- Forward till next target using 'zt'
-  keymap.set('x', 't', '<Plug>(leap-forward-till)')
-
-  -- Backward till previous target using 'zT'
-  keymap.set('x', 'T', '<Plug>(leap-backward-till)')
-
-  -- Repeat mappings similar to ; and , for z and zt motions
-  leap.add_repeat_mappings(';', ',', {
-    relative_directions = true,
-    modes = {'n', 'x', 'o'},
-  })
-
-
 -- RunJavaCode
 keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
 keymap.set("n", "<leader>mn", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
@@ -167,10 +144,6 @@ keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
 keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>')
 -- Close buffer
 keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
 keymap.set('n','<leader>bc','<Cmd>BufferCloseAllButPinned<CR>') --close all but pinned
 
 
@@ -185,10 +158,35 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
 -- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+keymap.set("n", "<leader>Gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set("n", "<leader>Gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set("n", "<leader>Gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set("n", "<leader>Gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- flash
+keymap.set(
+	"n",
+	"<leader>mm",
+	[[<cmd>lua require('flash').jump()<cr>]],
+	{ desc = "flash jump" }
+)
+keymap.set(
+	"n",
+	"<leader>mn",
+	[[<cmd>lua require('flash').treesitter()<cr>]],
+	{ desc = "flash jump" }
+)
+keymap.set(
+	"n",
+	"<leader>m,",
+	[[<cmd>lua require('flash').treesitter_search()<cr>]],
+	{ desc = "flash jump" }
+)
+-- harpoon
+keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
+keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
+keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
+keymap.set('n', '<leader>hm', [[<cmd>Telescope harpoon marks<cr>]])

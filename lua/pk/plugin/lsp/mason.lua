@@ -24,7 +24,6 @@ mason_lspconfig.setup({
     "lua_ls",
     "rust_analyzer",
     "jdtls",
-    "tsserver",
     "html",
     "eslint",
     "cssls",

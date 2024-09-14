@@ -29,7 +29,7 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-  -- packer can manage itself
+-- packer can manage itself
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
@@ -42,38 +42,38 @@ return packer.startup(function(use)
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
-  -- essential plugins
+-- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
-  -- commenting with gc
+-- commenting with gc
   use("numToStr/Comment.nvim")
 
-  -- file explorer
+-- file explorer
   use("nvim-tree/nvim-tree.lua")
 
-  -- vs-code like icons
+-- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
 
-  -- statusline
+-- statusline
   use("nvim-lualine/lualine.nvim")
 
 
-  -- autocompletion
+-- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
-  -- snippets
+-- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
 
-  -- managing & installing lsp servers, linters & formatters
+-- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-  -- configuring lsp servers
+-- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({
@@ -84,15 +84,16 @@ return packer.startup(function(use)
       { "nvim-treesitter/nvim-treesitter" },
     },
   })
-  -- enhanced lsp uis
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+
+-- enhanced lsp uis
+  -- use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
-  -- formatting & linting
+-- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-  -- treesitter configuration
+-- treesitter configuration
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -101,74 +102,66 @@ return packer.startup(function(use)
     end,
   })
 
-  -- auto closing
+-- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-  -- git integration
+-- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-  -- fidget
+-- fidget
   use ("j-hui/fidget.nvim")
 
-  --dashboard
+--dashboard
   use {
     use 'glepnir/dashboard-nvim',
     event = 'VimEnter',
     requires = {'nvim-tree/nvim-web-devicons'}
   }
-  --gotoPreview
+--gotoPreview
   use ('rmagatti/goto-preview')
   use {'akinsho/toggleterm.nvim', tag = '*'}
 
-  --minimap
+--minimap
   use 'rinx/nvim-minimap'
 
-  --gitDiff
+--gitDiff
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-  --barbar for tabs
+--barbar for tabs
   use {'romgrk/barbar.nvim', requires = {
     'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
   }}
 
-  -- Rainbow parentheses
+-- Rainbow parentheses
   use {'p00f/nvim-ts-rainbow'}
-  -- Autosave files
+
+-- Autosave files
   use {
         'Pocco81/AutoSave.nvim',
   }
 
-  -- which-key
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end
-  }
-
-  -- Autoformat files
+-- Autoformat files
   use 'lukas-reineke/lsp-format.nvim'    -- require "plugins/format"
 
-  -- fuzzy finding w/ telescope
+-- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
-  -- Java tools
+-- Java tools
   use 'mfussenegger/nvim-jdtls'
 
-  -- vim notify
+-- vim notify
   use 'rcarriga/nvim-notify'
 
-  -- tagbar
+-- tagbar
   use 'preservim/tagbar'
 
-  -- ident brackets
+-- ident brackets
   use 'nathanaelkane/vim-indent-guides'
 
-  -- cmdline
+-- cmdline
   use 'MunifTanjim/nui.nvim'
   use {
   'VonHeikemen/fine-cmdline.nvim',
@@ -176,7 +169,8 @@ return packer.startup(function(use)
     {'MunifTanjim/nui.nvim'}
   }
  }
-  -- nvim surround
+
+-- nvim surround
   use{
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -184,16 +178,28 @@ return packer.startup(function(use)
 
   use "tpope/vim-repeat"
 
-  -- Colorizer for showing color out of the colorcodes
+-- Colorizer for showing color out of the colorcodes
   use "norcalli/nvim-colorizer.lua"
 
-  -- nvim lint as linter
+-- nvim lint as linter
   use "mfussenegger/nvim-lint"
 
-  -- nvim formatter
+-- nvim formatter
   use 'mhartington/formatter.nvim'
 
-  -- Rust tools
+-- old world theme
+  use {"dgox16/oldworld.nvim"}
+
+-- which-key
+   -- use {'folke/which-key.nvim', tag = 'v1.5.1'}
+
+-- flask
+    use {'folke/flash.nvim', tag = 'v1.18.2'}
+
+-- harpoon
+    use {'ThePrimeagen/harpoon'}
+
+-- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then
     require("packer").sync()
