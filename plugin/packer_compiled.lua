@@ -289,6 +289,7 @@ _G.packer_plugins = {
   ["oldworld.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oldworld.nvim",
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/oldworld.nvim",
     url = "https://github.com/dgox16/oldworld.nvim"
   },
   ["packer.nvim"] = {
@@ -360,15 +361,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Hangsai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/prajjwal.kumar/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-ts-autotag ]]
-time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

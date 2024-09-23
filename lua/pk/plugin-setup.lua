@@ -44,6 +44,7 @@ return packer.startup(function(use)
 
 -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 -- commenting with gc
@@ -85,8 +86,6 @@ return packer.startup(function(use)
     },
   })
 
--- enhanced lsp uis
-  -- use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 -- formatting & linting
