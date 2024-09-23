@@ -42,3 +42,4 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- indent-blank-line
 opt.list = true
+opt.listchars:append "eol:⤵"
