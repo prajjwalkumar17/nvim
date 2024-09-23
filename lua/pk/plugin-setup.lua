@@ -138,9 +138,9 @@ return packer.startup(function(use)
   use {'p00f/nvim-ts-rainbow'}
 
 -- Autosave files
-  use {
-        'Pocco81/AutoSave.nvim',
-  }
+  -- use {
+  --       'Pocco81/AutoSave.nvim',
+  -- }
 
 -- Autoformat files
   use 'lukas-reineke/lsp-format.nvim'    -- require "plugins/format"
@@ -198,6 +198,9 @@ return packer.startup(function(use)
 
 -- harpoon
     use {'ThePrimeagen/harpoon'}
+
+-- indent-blank-line
+    use { 'lukas-reineke/indent-blankline.nvim', tag = 'v3.7.2'}
 
 -- Rust tools
   use 'simrat39/rust-tools.nvim'
