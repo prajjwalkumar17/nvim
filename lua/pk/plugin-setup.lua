@@ -149,7 +149,7 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 -- Java tools
-  use 'mfussenegger/nvim-jdtls'
+  use { 'mfussenegger/nvim-jdtls' }
 
 -- vim notify
   use 'rcarriga/nvim-notify'

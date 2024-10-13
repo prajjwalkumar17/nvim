@@ -21,7 +21,6 @@ require("pk.plugin.gotoPreview")
 require("pk.plugin.nvim-ts-rainbow")
 require("pk.plugin.autosave")
 require("pk.plugin.barbar")
-require("pk.plugin.lsp.language-servers.jdtls")
 require("pk.plugin.nvim-lint")
 require("pk.plugin.formatter-nvim")
 require("pk.plugin.nvim-notify")
@@ -34,3 +33,9 @@ require("pk.plugin.harpoon")
 require("pk.plugin.oldworld")
 require("pk.plugin.indent-blank-line")
 require("pk.plugin.nvim-colorizer")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    require("pk.ftplugin.java")
+  end
+})
