@@ -61,7 +61,7 @@ keymap.set("n","<leader>db",":DapToggleBreakpoint<CR>") --Add breakpoint
 keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
 
 -- RunJavaCode
-keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
+keymap.set("n", "<leader>';", ":w<CR>:!java %:p<CR>")
 keymap.set("n", "<leader>mn", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
 
 -- FormatJavaCode

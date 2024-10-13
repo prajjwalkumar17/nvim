@@ -3,7 +3,6 @@ vim.cmd [[ autocmd BufNewFile,BufRead *.Jenkinsfile set filetype=groovy ]]
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-vim.api.nvim_exec ('language en_US', true)
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
@@ -43,4 +42,4 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- indent-blank-line
 opt.list = true
-opt.listchars:append "eol:⤵"
+-- opt.listchars:append "eol:⤵"

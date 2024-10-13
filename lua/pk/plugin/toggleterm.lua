@@ -13,6 +13,6 @@ toggle.setup({
   shading_factor = 10, -- the percentage by which to lighten terminal background, default: -30 (gets multiplied by -3 if background is light)
   start_in_insert = true,
   persist_size = true,
-  shell = 'pwsh.exe',  -- Set the shell path to PowerShell
+  shell = 'zsh',  -- Set the shell path to PowerShell
   direction = 'horizontal'
 })
