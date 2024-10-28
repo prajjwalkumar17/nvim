@@ -12,7 +12,7 @@ keymap.set("i", "jk", "<ESC>")
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- deete single character without copying into register
+-- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
@@ -106,15 +106,6 @@ keymap.set("n", "<leader>l", "<cmd>lua vim.lsp.buf.hover()<cr>")
 keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
--- Clipboard support
---keymap.set("v", "<leader>y", "\"+y")
--- keymap.set("v", "<leader>y", "\"+yg_")
--- keymap.set("v", "<leader>y", "\"+yg_")
--- keymap.set("v", "<leader>y", "\"+yg_")
-
--- nnoremap("<leader>p", "\"+p")
--- nnoremap("<leader>P", "\"+P")
-
 -- Toggle between buffers
 keymap.set("n", "<leader><leader>", "<C-^>")
 
@@ -145,31 +136,6 @@ keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>')
 -- Close buffer
 keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
 keymap.set('n','<leader>bc','<Cmd>BufferCloseAllButPinned<CR>') --close all but pinned
-
--- flash
-keymap.set(
-	"n",
-	"<leader>mm",
-	[[<cmd>lua require('flash').jump()<cr>]],
-	{ desc = "flash jump" }
-)
-keymap.set(
-	"n",
-	"<leader>mn",
-	[[<cmd>lua require('flash').treesitter()<cr>]],
-	{ desc = "flash jump" }
-)
-keymap.set(
-	"n",
-	"<leader>m,",
-	[[<cmd>lua require('flash').treesitter_search()<cr>]],
-	{ desc = "flash jump" }
-)
--- harpoon
-keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
-keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
-keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
-keymap.set('n', '<leader>hm', [[<cmd>Telescope harpoon marks<cr>]])
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
