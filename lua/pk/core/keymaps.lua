@@ -62,10 +62,13 @@ keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
 
 -- RunJavaCode
 keymap.set("n", "<leader>';", ":w<CR>:!java %:p<CR>")
-keymap.set("n", "<leader>mn", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>.,", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
 
 -- FormatJavaCode
-keymap.set("n", "<leader>fm", ":!powershell -Command \"java -jar 'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\lsp\\google-java-format-1.19.1-all-deps.jar' -i '%:p'<CR>")
+local format_jar = vim.fn.fnamemodify(
+  debug.getinfo(1, "S").source:sub(2), ":h:h") .. "/plugin/lsp/google-java-format-1.25.2-all-deps.jar"
+
+keymap.set("n", "<leader>fm", ":!java -jar '" .. format_jar .. "' -i '%:p'<CR>")
 
 --gotoPreview
 keymap.set(
