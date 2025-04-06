@@ -62,7 +62,7 @@ keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
 
 -- RunJavaCode
 keymap.set("n", "<leader>';", ":w<CR>:!java %:p<CR>")
-keymap.set("n", "<leader>.,", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>/.", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
 
 -- FormatJavaCode
 local format_jar = vim.fn.fnamemodify(
@@ -122,7 +122,7 @@ keymap.set('n', '<leader>,', '<Cmd>BufferPrevious<CR>')
 keymap.set('n', '<leader>.', '<Cmd>BufferNext<CR>')
 -- Re-order to previous/next
 keymap.set('n', '<leader>;', '<Cmd>BufferMovePrevious<CR>')
-keymap.set('n', '<leader>', '<Cmd>BufferMoveNext<CR>')
+-- keymap.set('n', '<leader>', '<Cmd>BufferMoveNext<CR>')
 -- Goto buffer in position...
 keymap.set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>')
 keymap.set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>')
@@ -137,7 +137,7 @@ keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
 -- Pin/unpin buffer
 keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>')
 -- Close buffer
-keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
+keymap.set('n', '<leader>cc', '<Cmd>BufferClose<CR>')
 keymap.set('n','<leader>bc','<Cmd>BufferCloseAllButPinned<CR>') --close all but pinned
 
 -- nvim-tree
@@ -183,3 +183,8 @@ keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
 keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
 keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
 keymap.set('n', '<leader>hm', [[<cmd>Telescope harpoon marks<cr>]])
+
+
+-- Lsp keymaps
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>hd", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })

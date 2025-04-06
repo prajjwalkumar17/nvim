@@ -76,3 +76,8 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+return {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}

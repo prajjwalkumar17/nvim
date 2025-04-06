@@ -5,9 +5,14 @@ if not saga_status then
 end
 
 saga.setup({
-  -- keybinds for navigation in lspsaga window
+  lightbulb = {
+    enable = true,
+    enable_in_insert = false,
+    sign = true,            -- shows lightbulb sign in signcolumn
+    virtual_text = true,    -- shows 💡 as virtual text next to code
+    debounce = 50,
+  },
   scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-  -- use enter to open file with definition preview
   definition = {
     edit = "<CR>",
   },

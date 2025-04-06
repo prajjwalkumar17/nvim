@@ -3,4 +3,10 @@ if not status then
   return
 end
 
-flash.setup({})
+flash.setup({
+  modes = {
+    char = {
+      enabled = false,
+    },
+  },
+})
