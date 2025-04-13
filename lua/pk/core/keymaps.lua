@@ -183,3 +183,8 @@ keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
 keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
 keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
 keymap.set('n', '<leader>hm', [[<cmd>Telescope harpoon marks<cr>]])
+
+
+-- Lsp keymaps
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>hd", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })

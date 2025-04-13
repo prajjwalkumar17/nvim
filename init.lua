@@ -1,4 +1,5 @@
 require("pk.plugin-setup")
+require("pk.core.autocmds")
 require("pk.core.options")
 require("pk.core.keymaps")
 require("pk.core.colorscheme")
