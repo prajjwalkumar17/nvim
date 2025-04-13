@@ -32,6 +32,8 @@ require("pk.plugin.harpoon")
 require("pk.plugin.oldworld")
 require("pk.plugin.indent-blank-line")
 require("pk.plugin.nvim-colorizer")
+require("pk.plugin.markdown-preview")
+require("pk.plugin.markdown-preview-check")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
   callback = function()

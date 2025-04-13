@@ -137,9 +137,7 @@ return packer.startup(function(use)
   use {'p00f/nvim-ts-rainbow'}
 
 -- Autosave files
-  -- use {
-  --       'Pocco81/AutoSave.nvim',
-  -- }
+  use {'Pocco81/AutoSave.nvim'}
 
 -- Autoformat files
   use 'lukas-reineke/lsp-format.nvim'    -- require "plugins/format"
@@ -206,5 +204,14 @@ return packer.startup(function(use)
   if packer_bootstrap then
     require("packer").sync()
   end
-end)
 
+-- Markdown preview plugin
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+      ft = { "markdown" },
+    })
+    if packer_bootstrap then
+      require("packer").sync()
+    end
+end)
