@@ -26,7 +26,7 @@ which_key.setup(
     },
     operators = { gc = "Comments" },
     icons = {
-        breadcrumb = "È", -- symbol used in the command line area that shows your active key combo
+        breadcrumb = "Ãˆ", -- symbol used in the command line area that shows your active key combo
         separator = "?", -- symbol used between a key and it's label
         group = "+", -- symbol prepended to a group
     },

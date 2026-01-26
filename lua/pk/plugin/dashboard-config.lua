@@ -52,7 +52,7 @@ db.setup({
     },
         center = {
             {
-        icon = ' ',
+        icon = '📁 ',
         icon_hl = 'Title',
         desc = 'Find File           ',
         desc_hl = 'String',
@@ -62,7 +62,7 @@ db.setup({
         action = 'Telescope find_files'
       },
       {
-        icon = ' ',
+        icon = '✒ ',
         icon_hl = 'Title',
         desc = 'Search Text           ',
         desc_hl = 'String',
@@ -72,7 +72,7 @@ db.setup({
         action = 'Telescope live_grep'
       },
       {
-        icon = ' ',
+        icon = '🕜 ',
         icon_hl = 'Title',
         desc = 'Recent Files           ',
         desc_hl = 'String',
@@ -81,16 +81,26 @@ db.setup({
         key_hl = 'Number',
         action = 'Telescope oldfiles'
       },
-        {
-        icon = ' ',
+      {
+        icon = '🎨 ',
         icon_hl = 'Title',
-        desc = 'Config           ',
+        desc = 'Switch Colorschemes           ',
         desc_hl = 'String',
         key = 'd',
         keymap = 'SPC f f',
         key_hl = 'Number',
-        action = 'edit  ~/.config/nvim/lua/pk/plugin-setup.lua'
-      }
+        action = 'Telescope colorscheme'
+      },
+      {
+      icon = '🌸 ',
+      icon_hl = 'Title',
+      desc = 'Config           ',
+      desc_hl = 'String',
+      key = 'e',
+      keymap = 'SPC f f',
+      key_hl = 'Number',
+      action = 'edit  ~/.config/nvim/lua/pk/plugin-setup.lua'
+    }
     },
     footer = {
       [[]],

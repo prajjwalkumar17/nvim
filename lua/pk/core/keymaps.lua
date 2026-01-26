@@ -42,9 +42,30 @@ keymap.set("n","<C-right>", "<cmd>vertical resize +1<cr>")
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
---Toggleterm
--- keymap.set("n","<leader>t",":ToggleTerm<CR>")
+-- Tagbar
+keymap.set("n","<F8>", ":TagbarToggle<CR>")
+
+-- Cmdline
+keymap.set("n","<leader>b", ":FineCmdline<CR>")
+
+-- Indent lines
+keymap.set("n", "<leader>if", ":IndentGuidesToggle<CR>")
+
+-- Toggleterm
+keymap.set("n","<leader>t",":ToggleTerm direction=horizontal<CR>")
+keymap.set("n","<leader>,",":ToggleTermToggleAll<CR>")
 keymap.set("n","<leader>x",":ToggleTerm size=10 direction=float<CR>")
+
+-- Nvim dap
+keymap.set("n","<leader>db",":DapToggleBreakpoint<CR>") --Add breakpoint
+keymap.set("n","<leader>dr",":DapContinue<CR>") --Continue the debugger
+
+-- RunJavaCode
+keymap.set("n", "<leader>mn", ":w<CR>:!java %:p<CR>")
+keymap.set("n", "<leader>mn", ":w<CR>:terminal java %<CR>", { noremap = true, silent = true })
+
+-- FormatJavaCode
+keymap.set("n", "<leader>fm", ":!powershell -Command \"java -jar 'C:\\Users\\Hangsai\\AppData\\Local\\nvim\\lua\\pk\\plugin\\lsp\\google-java-format-1.19.1-all-deps.jar' -i '%:p'<CR>")
 
 --gotoPreview
 keymap.set(
@@ -79,14 +100,14 @@ keymap.set(
 )
 
 
-keymap.set("n", "<leader>lk", "<cmd>lua vim.lsp.buf.hover()<cr>")
+keymap.set("n", "<leader>l", "<cmd>lua vim.lsp.buf.hover()<cr>")
 
 -- Keep Visual Mode selections when indenting
 keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
 -- Clipboard support
--- keymap.set("v", "<leader>y", "\"+y")
+--keymap.set("v", "<leader>y", "\"+y")
 -- keymap.set("v", "<leader>y", "\"+yg_")
 -- keymap.set("v", "<leader>y", "\"+yg_")
 -- keymap.set("v", "<leader>y", "\"+yg_")
@@ -123,10 +144,6 @@ keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
 keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>')
 -- Close buffer
 keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
 keymap.set('n','<leader>bc','<Cmd>BufferCloseAllButPinned<CR>') --close all but pinned
 
 -- flash
@@ -172,3 +189,28 @@ keymap.set("n", "<leader>Gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- flash
+keymap.set(
+	"n",
+	"<leader>mm",
+	[[<cmd>lua require('flash').jump()<cr>]],
+	{ desc = "flash jump" }
+)
+keymap.set(
+	"n",
+	"<leader>mn",
+	[[<cmd>lua require('flash').treesitter()<cr>]],
+	{ desc = "flash jump" }
+)
+keymap.set(
+	"n",
+	"<leader>m,",
+	[[<cmd>lua require('flash').treesitter_search()<cr>]],
+	{ desc = "flash jump" }
+)
+-- harpoon
+keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
+keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
+keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
+keymap.set('n', '<leader>hm', [[<cmd>Telescope harpoon marks<cr>]])

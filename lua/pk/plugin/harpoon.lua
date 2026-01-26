@@ -1,4 +1,4 @@
--- import lualine plugin safely
+-- import harpoon plugin safely
 local status, harpoon = pcall(require, "harpoon")
 if not status then
   return
@@ -35,4 +35,3 @@ harpoon.setup({
 
 -- Harpoon telescope extension
 require('telescope').load_extension('harpoon')
-

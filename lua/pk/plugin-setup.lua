@@ -9,6 +9,7 @@ local ensure_packer = function()
   end
   return false
 end
+
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
@@ -28,7 +29,7 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-  -- packer can manage itself
+-- packer can manage itself
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
@@ -41,41 +42,39 @@ return packer.startup(function(use)
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
-  -- essential plugins
-  -- use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+-- essential plugins
+  use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
-  -- commenting with gc
+-- commenting with gc
   use("numToStr/Comment.nvim")
 
-  -- file explorer
+-- file explorer
   use("nvim-tree/nvim-tree.lua")
 
-  -- vs-code like icons
+-- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
 
-  -- statusline
+-- statusline
   use("nvim-lualine/lualine.nvim")
 
-  -- fuzzy finding w/ telescope
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
-  -- autocompletion
+-- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
-  -- snippets
+-- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
 
-  -- managing & installing lsp servers, linters & formatters
+-- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-  -- configuring lsp servers
+-- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({
@@ -85,14 +84,15 @@ return packer.startup(function(use)
       { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" },
     },
-  }) -- enhanced lsp uis
+  })
+
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
-  -- formatting & linting
+-- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-  -- treesitter configuration
+-- treesitter configuration
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -101,56 +101,96 @@ return packer.startup(function(use)
     end,
   })
 
-  -- auto closing
-  -- use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  -- use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+-- auto closing
+  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-  -- git integration
+-- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
- -- fidget
-  use {"j-hui/fidget.nvim"}
-  --dashboard
-use {
-  use 'glepnir/dashboard-nvim',
-  event = 'VimEnter',
-  requires = {'nvim-tree/nvim-web-devicons'}
-}
-  --gotoPreview
-use ('rmagatti/goto-preview')
-use {'akinsho/toggleterm.nvim', tag = '*'}
+-- fidget
+  use ("j-hui/fidget.nvim")
 
---   --minimap
--- use 'rinx/nvim-minimap'
+--dashboard
+  use {
+    use 'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
+--gotoPreview
+  use ('rmagatti/goto-preview')
+  use {'akinsho/toggleterm.nvim', tag = '*'}
 
-  --gitDiff
-use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+--minimap
+  use 'rinx/nvim-minimap'
 
-  --barbar for tabs
-use {'romgrk/barbar.nvim', requires = {
-  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-}}
+--gitDiff
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+--barbar for tabs
+  use {'romgrk/barbar.nvim', requires = {
+    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  }}
+
 -- Rainbow parentheses
-use {'p00f/nvim-ts-rainbow'}
--- -- Autosave files
--- use {
---       'Pocco81/AutoSave.nvim',
---           -- require "plugins/autosave"
--- }
+  use {'p00f/nvim-ts-rainbow'}
 
---   -- Autoformat files
--- use {
---       'lukas-reineke/lsp-format.nvim',
---           -- require "plugins/format"
--- }
-  use {"lukas-reineke/indent-blankline.nvim"}
+-- Autosave files
+  -- use {
+  --       'Pocco81/AutoSave.nvim',
+  -- }
+
+-- Autoformat files
+  use 'lukas-reineke/lsp-format.nvim'    -- require "plugins/format"
+
+-- fuzzy finding w/ telescope
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+-- Java tools
+  use 'mfussenegger/nvim-jdtls'
+
+-- vim notify
+  use 'rcarriga/nvim-notify'
+
+-- tagbar
+  use 'preservim/tagbar'
+
+-- ident brackets
+  use 'nathanaelkane/vim-indent-guides'
+
+-- cmdline
+  use 'MunifTanjim/nui.nvim'
+  use {
+  'VonHeikemen/fine-cmdline.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+ }
+
+-- nvim surround
+  use{
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  }
+
+  use "tpope/vim-repeat"
+
+-- Colorizer for showing color out of the colorcodes
+  use "norcalli/nvim-colorizer.lua"
+
+-- nvim lint as linter
+  use "mfussenegger/nvim-lint"
+
+-- nvim formatter
+  use 'mhartington/formatter.nvim'
 
 -- old world theme
   use {"dgox16/oldworld.nvim"}
 
 -- which-key
-   use {'folke/which-key.nvim', tag = 'v1.5.1'}
+   -- use {'folke/which-key.nvim', tag = 'v1.5.1'}
 
 -- flask
     use {'folke/flash.nvim', tag = 'v1.18.2'}
@@ -158,8 +198,13 @@ use {'p00f/nvim-ts-rainbow'}
 -- harpoon
     use {'ThePrimeagen/harpoon'}
 
+-- indent-blank-line
+    use { 'lukas-reineke/indent-blankline.nvim', tag = 'v3.7.2'}
+
+-- Rust tools
   use 'simrat39/rust-tools.nvim'
   if packer_bootstrap then
     require("packer").sync()
   end
 end)
+
