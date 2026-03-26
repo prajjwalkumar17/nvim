@@ -36,6 +36,8 @@ return packer.startup(function(use)
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
+  use("a5hk/night-coder") -- night coder colorscheme
+
   use("rebelot/kanagawa.nvim") -- dark--redish theme
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -134,7 +136,7 @@ return packer.startup(function(use)
   }}
 
 -- Rainbow parentheses
-  use {'p00f/nvim-ts-rainbow'}
+  use { "HiPhish/rainbow-delimiters.nvim" }
 
 -- Autosave files
   use {'Pocco81/AutoSave.nvim'}

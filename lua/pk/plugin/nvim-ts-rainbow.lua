@@ -1,8 +1,6 @@
-local setup, tsr= pcall(require, "p00f/nvim-ts-rainbow")
-if not setup then
+local ok = pcall(require, "rainbow-delimiters")
+if not ok then
   return
 end
-tsr.setup({
-})
 
-vim.g.rainbow_active = true
+vim.g.rainbow_delimiters = vim.g.rainbow_delimiters or {}

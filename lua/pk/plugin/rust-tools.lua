@@ -1,3 +1,8 @@
+-- rust-tools depends on lspconfig; skip on newer Neovim API to avoid deprecation warning
+if vim.lsp and vim.lsp.config ~= nil then
+  return
+end
+
 local setup, rt = pcall(require, "rust-tools")
 if not setup then
   return

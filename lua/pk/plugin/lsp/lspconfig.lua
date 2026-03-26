@@ -1,9 +1,3 @@
--- import lspconfig plugin safely
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-  return
-end
-
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
@@ -47,35 +41,77 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-lspconfig.jdtls.setup({
-  cmd = { "jdtls" }
-})
+if vim.lsp and vim.lsp.config ~= nil then
+  vim.lsp.config("jdtls", {
+    cmd = { "jdtls" },
+  })
 
-lspconfig.rust_analyzer.setup({
-  cmd = { "rust-analyzer" }
-})
+  vim.lsp.config("rust_analyzer", {
+    cmd = { "rust-analyzer" },
+  })
 
--- configure lua server (with special settings)
-lspconfig["lua_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  cmd = { "lua-language-server" },
-  settings = { -- custom settings for lua
-    Lua = {
-      -- make the language server recognize "vim" global
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        -- make language server aware of runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
+  -- configure lua server (with special settings)
+  vim.lsp.config("lua_ls", {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "lua-language-server" },
+    settings = { -- custom settings for lua
+      Lua = {
+        -- make the language server recognize "vim" global
+        diagnostics = {
+          globals = { "vim" },
+        },
+        workspace = {
+          -- make language server aware of runtime files
+          library = {
+            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+            [vim.fn.stdpath("config") .. "/lua"] = true,
+          },
         },
       },
     },
-  },
-})
+  })
+
+  if vim.lsp.enable then
+    vim.lsp.enable({ "jdtls", "rust_analyzer", "lua_ls" })
+  end
+else
+  -- Fallback for older Neovim versions.
+  local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+  if not lspconfig_status then
+    return
+  end
+
+  lspconfig.jdtls.setup({
+    cmd = { "jdtls" },
+  })
+
+  lspconfig.rust_analyzer.setup({
+    cmd = { "rust-analyzer" },
+  })
+
+  -- configure lua server (with special settings)
+  lspconfig["lua_ls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "lua-language-server" },
+    settings = { -- custom settings for lua
+      Lua = {
+        -- make the language server recognize "vim" global
+        diagnostics = {
+          globals = { "vim" },
+        },
+        workspace = {
+          -- make language server aware of runtime files
+          library = {
+            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+            [vim.fn.stdpath("config") .. "/lua"] = true,
+          },
+        },
+      },
+    },
+  })
+end
 
 return {
   on_attach = on_attach,
